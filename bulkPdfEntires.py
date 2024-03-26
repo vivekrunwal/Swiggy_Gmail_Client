@@ -4,6 +4,9 @@ from google.auth.transport.requests import Request
 import os
 import pickle
 
+import base64
+from googleapiclient import errors
+
 # If modifying these SCOPES, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
@@ -72,10 +75,6 @@ def download_attachments(service, user_id, message_id, store_dir):
 
     except errors.HttpError as error:
         print(f'An error occurred: {error}')
-
-import os
-import base64
-from googleapiclient import errors
 
 # Assuming `service` is the Gmail API service instance from Step 1
 user_id = 'me'
