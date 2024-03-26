@@ -51,9 +51,6 @@ EMAIL_SEARCH_QUERY = 'from:swiggy.com subject:swiggy'
 
 Contributions are welcome! Please feel free to submit pull requests, report bugs, and suggest features.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
 ## Acknowledgments
 
