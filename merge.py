@@ -31,11 +31,11 @@ def extract_text_from_first_page(pdf_path):
     """
     Extract text from the first page of a PDF file.
     """
-    print(pdf_path)
+    # print(pdf_path)
     with fitz.open(pdf_path) as doc:
         page = doc.load_page(0)  # Assuming the relevant info is on the first page
         text = page.get_text()
-        print(text)
+        # print(text)
     return text
 
 def find_invoice_amounts(text):
@@ -63,7 +63,7 @@ for pdf_path in pdf_paths:
     text = extract_text_from_first_page(pdf_path)
     amounts = find_invoice_amounts(text)
     invoice_num = find_invoice_num(text)
-    print(text, invoice_num)
+    print(f"Amount for {invoice_num} is {amounts} \n")
     
     if(invoice_num not in invoice_numbers_seen):
     # Assuming the last amount in the document is the total for simplicity
@@ -73,7 +73,7 @@ for pdf_path in pdf_paths:
 
 # 2945.16
 
-print(pdf_paths)
+# print(pdf_paths)
 
 current_time = datetime.now()
 formatted_time = current_time.strftime("%Y-%m-%d_%H-%M-%S")
@@ -87,7 +87,7 @@ for pdf_path in pdf_paths:  # `pdf_paths` is a list of paths to your PDF files
     pdf_reader = PyPDF2.PdfReader(pdf_path)
     text = extract_text_from_first_page(pdf_path)
     invoice_num = find_invoice_num(text)
-    print(f"Invoice Num:{invoice_num}")
+    # print(f"Invoice Num:{invoice_num}")
     
     if(invoice_num in invoice_numbers_seen):
         for page_num in range(len(pdf_reader.pages)):
