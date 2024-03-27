@@ -9,6 +9,21 @@ from googleapiclient import errors
 
 # If modifying these SCOPES, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+attachments_dir = './attachments/taco/'
+
+
+def delete_existing_pdfs(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.pdf'):
+            file_path = os.path.join(directory, filename)
+            try:
+                os.remove(file_path)
+                print(f'Deleted {file_path}')
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+
+# Usage
+delete_existing_pdfs(attachments_dir)
 
 def get_gmail_service():
     creds = None
@@ -35,8 +50,8 @@ def get_gmail_service():
 
 service = get_gmail_service()
 # Replace 'your specific address' with the actual content you're searching for
-after_date = "2024/03/01"  # Start of the date range
-before_date = "2024/03/31"  # End of the date range
+after_date = "2024/01/01"  # Start of the date range
+before_date = "2024/01/31"  # End of the date range
 # query = f'after:{after_date} before:{before_date}'
 
 query = f'from:noreply@swiggy.in subject:Swiggy "560034" after:{after_date}'
@@ -45,7 +60,6 @@ messages = results.get('messages', [])
 
 print(messages)
 
-attachments_dir = './attachments/taco/'
 os.makedirs(attachments_dir, exist_ok=True)
 
 
