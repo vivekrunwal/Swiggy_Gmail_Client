@@ -6,7 +6,6 @@ from datetime import datetime
 import PyPDF2
 import glob
 
-
 store_dir = './attachments/taco'
 merged_invoice_dir = './'
 

@@ -50,8 +50,8 @@ def get_gmail_service():
 
 service = get_gmail_service()
 # Replace 'your specific address' with the actual content you're searching for
-after_date = "2024/01/01"  # Start of the date range
-before_date = "2024/01/31"  # End of the date range
+after_date = "2024/03/01"  # Start of the date range
+before_date = "2024/03/31"  # End of the date range
 # query = f'after:{after_date} before:{before_date}'
 
 query = f'from:noreply@swiggy.in subject:Swiggy "560034" after:{after_date}'
