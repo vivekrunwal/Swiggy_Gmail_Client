@@ -57,6 +57,4 @@ Contributions are welcome! Please feel free to submit pull requests, report bugs
 - This project is not affiliated with or endorsed by Swiggy.
 - Thanks to the Gmail API for making email processing possible.
 
----
-
-Remember to replace placeholder URLs and any specific instructions with your project's actual details. This README file provides a comprehensive guide to help users understand and use your project effectively.
+--
