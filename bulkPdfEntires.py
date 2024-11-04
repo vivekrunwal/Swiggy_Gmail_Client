@@ -50,18 +50,17 @@ def get_gmail_service():
 
 service = get_gmail_service()
 # Replace 'your specific address' with the actual content you're searching for
-after_date = "2024/03/01"  # Start of the date range
-before_date = "2024/03/31"  # End of the date range
+after_date = "2024/10/05"  # Start of the date range
+before_date = "2024/11/01"  # End of the date range
 # query = f'after:{after_date} before:{before_date}'
 
-query = f'from:noreply@swiggy.in subject:Swiggy "560034" after:{after_date}'
+query = f'from:noreply@swiggy.in subject:Swiggy "3rd Floor 7th C Main Rd" after:{after_date}'
 results = service.users().messages().list(userId='me', q=query).execute()
 messages = results.get('messages', [])
 
 print(messages)
 
 os.makedirs(attachments_dir, exist_ok=True)
-
 
 # Further code to process each message, extract and download attachments
 
