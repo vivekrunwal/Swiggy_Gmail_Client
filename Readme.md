@@ -4,6 +4,8 @@
 
 This project is designed to automate the retrieval and processing of Swiggy invoice PDFs from Gmail, ensuring efficient management and analysis of food order expenses. It searches through the user's Gmail for emails from Swiggy containing PDF invoices, extracts these PDFs, and processes them to extract key information, such as invoice numbers and totals, while also checking for and eliminating duplicate invoices based on invoice numbers.
 
+
+
 ## Features
 
 - **Email Search**: Automatically search your Gmail inbox for Swiggy invoice emails using specific criteria.
@@ -35,7 +37,8 @@ pip install -r requirements.txt
 
 3. **Gmail API Setup**
 
-- Follow Google's guide to create a project in the Google Developer Console, enable the Gmail API, and obtain your `credentials.json` file. Place this file in the project root.
+- Follow Google's guide to create a project in the Google Developer Console, enable the Gmail API, and obtain your `credentials.json` file. Place this file in the project root
+- Make sure to delete the existing token.pickle and credentials.json file
 
 ## Configuration
 
